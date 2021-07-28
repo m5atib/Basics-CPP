@@ -1,33 +1,54 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
 #include <iostream>
-using namespace std;
-int main()
-{
-	int count=0;
-	int k,s=0,x;
-	int i;
-	int c;
-	int p;
-	int pe;
-	int digit,a=0,b=0;
-	int choise;
-	char option;
-//******************************************************************************
-cout<<"Enter a number to find second max digit : "; cin>>s;
+#include <algorithm>
 
-	while (s!=0)
-{
-	digit=s%10; // to get digit
-	if(digit>a) //for check the first larg digit 
-		{
-		b=a;
-		a=digit;
-		}
-	else if(digit>b) //to check the second larg digit
-		{
-		b=digit;
-		}	
-	s/=10;
-}
-	cout<<"The second larg digit : "<<b<<endl;		
-	return 0;
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    string a;
+    cin>>a;
+    int temp=0,pos=0;
+    int tempo=0;
+    int arr[a.length()];
+
+    for (int i=0; i<a.length() ; i++)
+    {
+          cin>>arr[i];
+        
+        
+    }
+    int mini= arr[0];
+   for (int i=1; i<a.length() ; i++){
+   	if (mini >arr[i] ) {
+	   	mini=arr[i];
+	   	pos = i;
+	   }
+   }
+  
+    string b;
+    cin>>b;
+  
+     int arr2[b.length()];
+   for (int i=0; i<b.length() ; i++)
+    {
+          cin>>arr2[i];
+        
+        
+    }
+   int pos2=0;
+   int mini2 = arr2[0];
+     for (int i=1; i<b.length() ; i++){
+   	if (mini2 >arr2[i] ) {
+	   	mini2=arr2[i];
+	   	pos2 = i;
+	   }
+   }
+    
+//     Choose branch B then branch G
+cout<<"Choose branch "<<a[pos]<<" then branch "<<b[pos2]<<endl;
+    return 0;
 }
